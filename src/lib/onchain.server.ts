@@ -12,7 +12,7 @@ import { rpc } from "./rpc";
 
 // Placeholder token (per approved plan, §0.2) — not the real $FISH, which
 // hasn't launched yet. Swap this constant when the real token goes live.
-const HOLD_TOKEN_ADDRESS = "0x39dBED3a2bd333467115dE45665cC57F813C4571" as const;
+const HOLD_TOKEN_ADDRESS = "0xc9322a2feda9a189b15945369d14ce7d2ee57017" as const;
 
 const ERC20_ABI = [
   {

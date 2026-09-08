@@ -22,7 +22,7 @@ export function ExternalLinks() {
   return (
     <>
       <a
-        href="https://www.ponsfamily.com/launchpad/........"
+        href="https://www.ponsfamily.com/launchpad/0xc9322a2feda9a189b15945369d14ce7d2ee57017"
         target="_blank"
         rel="noreferrer noopener"
         aria-label="Buy on Pons Family Launchpad"
