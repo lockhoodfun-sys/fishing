@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { supabase } from "@/integrations/supabase/client";
 import { useProfileStore } from "@/hooks/useProfileStore";
-import { updateProfile, uploadAvatar, grantTestCoins } from "@/lib/profile.functions";
+import { updateProfile, uploadAvatar } from "@/lib/profile.functions";
 import { xpProgressFor } from "@/lib/xp";
 
 const RARITIES = [
@@ -54,7 +54,6 @@ export function ProfilePanel() {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [grantingCoins, setGrantingCoins] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const xpProgress = xpProgressFor(profile?.xp);
 
@@ -118,23 +117,6 @@ export function ProfilePanel() {
   };
 
   const initials = (profile.display_name || profile.username || "A").slice(0, 2).toUpperCase();
-
-  // TEST-ONLY: also gated server-side (see grantTestCoins). This client
-  // check just keeps the button out of production builds — DELETE this
-  // whole handler + the button below before public release.
-  const onGrantTestCoins = async () => {
-    if (!proof) return;
-    setGrantingCoins(true);
-    try {
-      const row = await grantTestCoins({ data: proof });
-      setProfile(row);
-      toast.success("Test coins granted.");
-    } catch (e) {
-      toast.error(e instanceof Error ? e.message : "Could not grant test coins.");
-    } finally {
-      setGrantingCoins(false);
-    }
-  };
 
   return (
     <Dialog open={panelOpen} onOpenChange={setPanelOpen}>
@@ -255,19 +237,6 @@ export function ProfilePanel() {
         </div>
 
         {error && <p className="text-sm text-destructive">{error}</p>}
-
-        {import.meta.env.DEV && (
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            disabled={grantingCoins}
-            onClick={onGrantTestCoins}
-          >
-            {grantingCoins && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            [TEST] Grant 10,000,000 coins
-          </Button>
-        )}
 
         <Button onClick={onSave} disabled={saving}>
           {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
