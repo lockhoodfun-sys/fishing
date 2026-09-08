@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1788537083327,
+      "tag": "0000_gofish_base_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788537139753,
+      "tag": "0001_seed_gameplay_and_xp",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1788537185016,
+      "tag": "0002_avatars_storage_policies",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1788602818865,
+      "tag": "0003_gofish_rule_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1788602968908,
+      "tag": "0004_gofish_gear_columns_and_catalog",
+      "breakpoints": true
+    }
+  ]
+}
