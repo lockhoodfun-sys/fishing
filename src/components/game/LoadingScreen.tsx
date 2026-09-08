@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import banner from "@/assets/loading-banner.jpg";
 
 /** Minimum time the loading artwork stays on screen, even when assets are quick. */
-const MIN_VISIBLE_MS = 3200;
+const MIN_VISIBLE_MS = 6200;
 
 /**
  * Full-screen loading overlay shown while the ~27 MB of GLB models download

@@ -5,13 +5,13 @@ export const Route = createFileRoute("/")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Koleo Island — 3D Fishing Game" },
+      { title: "Go Fishing" },
       {
         name: "description",
         content:
           "A 3D fishing game: cast from a tiny island pier into the open ocean, wait for a bite, then reel in the catch.",
       },
-      { property: "og:title", content: "Koleo Island — 3D Fishing Game" },
+      { property: "og:title", content: "Free To Play - Play To Earn" },
       {
         property: "og:description",
         content:
